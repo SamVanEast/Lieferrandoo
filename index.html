@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando</title>
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
+
+    <link rel="stylesheet" href="lato_font.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="JsTemplates/arrays.js"></script>
+    <script src="JsTemplates/html.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body id="body" onload="init()">
+
+    <div id="popup" class="popup" style="display: none" onclick="closePopup()">
+        <div id="popup-basket" class="popup-basket" onclick="save(event)">
+            <div id="popup-close" class="popup_close" onclick="closePopup()"><img src="icons/arrow orange.png" alt="">
+            </div>
+            <h2>Warenkorb</h2>
+            <div id="popup-selected-dishes" class="selected_dishes"></div>
+            <div id="popup-price-calculation" class="price_calculation"></div>
+            <button id="popup-button-pay" class="shopping_card_button" style="display: none" onclick="openOrdered()"></button>
+        </div>
+    </div>
+
+    <header id="header" class="header">
+        <div id="header-logo" class="header_logo">
+            <div><img src="icons/arrow orange.png" alt=""></div>
+            <h2>Lieferrandoo</h2>
+        </div>
+        <b id="header-restaurant-menu" class="header_restaurante_menu  display_none">Speisekarte</b>
+        <div id="header-language-settings" class="header_language_settings  display_none">
+            <div><img class="language_img" src="icons/german flag.jpg" alt=""></div>
+            <div><img class="menu_img" src="icons/menu.png" alt=""></div>
+        </div>
+    </header>
+
+    <div id="order-area" class="order_area">
+        <div id="homepage" class="homepage">
+            <div id="about_restaurant" class="about_restaurant">
+                <img class="about_restaurant_header_img" src="image/header.jpg" alt="">
+                <img class="about_restaurant_logo_img" src="image/logo.png" alt="">
+                <div id="restaurant">
+                    <div id="restaurant-name" class="restaurant_name">
+                        <h1>Restaurante Service</h1>
+                        <div class="restaurant_name_icon">
+                            <div><img src="icons/info black.png" alt=""></div>
+                            <div><img src="icons/heart.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div id="restaurant-rating" class="restaurant_rating">
+                        <img src="icons/star full.png" alt="">
+                        <img src="icons/star full.png" alt="">
+                        <img src="icons/star full.png" alt="">
+                        <img src="icons/star full.png" alt="">
+                        <img src="icons/star empty.png" alt="">
+                        <span>27.9k Bewertungen</span>
+                    </div>
+                    <div id="restaurant-info" class="restaurant_info">
+                        <div>
+                            <img src="icons/clock.png" alt="">
+                            <span>Ab 09:30 Uhr</span>
+                        </div>
+                        <div>|</div>
+                        <div>
+                            <img src="icons/bike.png" alt="">
+                            <span>2.00 €</span>
+                        </div>
+                        <div>|</div>
+                        <div>
+                            <img src="icons/padlock.png" alt="">
+                            <span>Min. 15.00 €</span>
+                        </div>
+                    </div>
+                    <div id="restaurant-owner-info" class="restaurant_owner_info">Unsere Mahlzeiten werden nur aus den
+                        hochwertigsten Zutaten zubereitet! </div>
+                </div>
+
+
+                <div id="menu-categories" class="menu_categories display_none">
+                    <div class="menu_categories_search_icon"><img src="icons/search.png" alt=""></div>
+                    <div id="categories" class="categories">
+                        <div><a href="#salad">Salate</a></div>
+                        <div><a href="#pizza">Pizza</a></div>
+                        <div><a href="#chinese-dishes">Chinesische Gerichte</a></div>
+                        <div><a href="#indian-dishes">Indische Gerichte</a></div>
+                        <div><a href="#dessert">Dessert</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="food-area" class="food_area">
+            </div>
+        </div>
+
+
+        <div id="shopping-card" class="shopping_card display_none">
+            <h2>Warenkorb</h2>
+            <div id="selected-dishes" class="selected_dishes">
+            </div>
+            <div id="price-calculation" class="price_calculation">
+            </div>
+            <button id="button-pay" class="shopping_card_button" style="display: none" onclick="openOrdered()"></button>
+        </div>
+
+
+    </div>
+    <div id="shopping-basket-div-button" class="shopping_basket_div_button" style="display: none">
+        <button id="shopping-basket-button" class="shopping_basket_button" onclick="renderPopupShoppingCard()"></button>
+    </div>
+
+    <div id="ordered" class="ordered" onclick="closeOrdered()" style="display: none">
+        <div class="ordered_content" onclick="save(event)">
+            <div onclick="closeOrdered()"><img src="icons/arrow orange.png" alt=""></div>
+            <h2>Bestellung erfogreich!</h2>
+            <span>Ihre Bestellung konnte erfolgreich bezahlt werden und wird nun vom Restaurant zubereitet.</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
